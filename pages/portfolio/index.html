@@ -1,0 +1,745 @@
+<title>Anna Paula Nadal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  /* Paleta lida da fotografia de formatura: o azul royal da capa, o travertino
+     dourado da parede e o preto da beca. Nenhuma cor foi escolhida fora dela. */
+  :root {
+    --ink:      #141210;
+    --surface:  #1e1a16;
+    --surface2: #2a241c;
+    --paper:    #f2ede3;
+    --muted:    #ab9c86;
+    --muted2:   #9e9080;
+    --rule:     #3a3228;
+    --blue:     #2a74d6;
+    --blue-lt:  #5f9de8;
+    --blue-dk:  #16508a;
+    --gold:     #c9a063;
+    --sans: "Archivo", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box }
+  body {
+    margin: 0; background: var(--ink); color: var(--paper);
+    font-family: var(--sans); font-size: 16px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; padding-inline: 22px }
+  img { max-width: 100% }
+
+  /* ---------- topo ---------- */
+  .bar {
+    position: fixed; inset: 0 0 auto; z-index: 60;
+    display: flex; align-items: center; gap: 18px;
+    padding: 13px 22px; padding-top: calc(13px + env(safe-area-inset-top, 0px));
+    background: rgba(20,18,16,.88); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted2);
+  }
+  .bar b { color: var(--paper); font-weight: 500 }
+  .bar .sep { flex: 1 }
+  .bar a { color: var(--muted2); text-decoration: none; transition: color .2s }
+  .bar a:hover { color: var(--gold) }
+  .bar a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px }
+  .prog { position: fixed; inset: 0 auto auto 0; height: 2px; width: 0%; z-index: 61;
+          background: linear-gradient(90deg, var(--blue), var(--gold)) }
+  @media (max-width: 620px) { .bar .opt { display: none } }
+
+  /* ---------- abertura ---------- */
+  .hero { padding-block: 112px 64px; display: grid; grid-template-columns: 1fr 340px; gap: 54px; align-items: center }
+  @media (max-width: 880px) {
+    .hero { grid-template-columns: 1fr; gap: 30px; padding-block: 96px 44px }
+    .portrait { justify-self: start; max-width: 190px }
+  }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 12.5px; color: var(--gold);
+    letter-spacing: .18em; text-transform: uppercase; margin: 0 0 22px;
+  }
+  h1 {
+    margin: 0 0 26px; font-size: clamp(44px, 9.6vw, 116px);
+    font-weight: 900; font-stretch: 114%; line-height: .85;
+    letter-spacing: -.04em; text-transform: uppercase;
+  }
+  h1 .w { display: inline-block; white-space: nowrap }
+  h1 .l { display: inline-block; will-change: transform }
+  h1 .dot { color: var(--blue) }
+  .claim { margin: 0; font-size: clamp(18px, 2.1vw, 23px); line-height: 1.4; color: var(--muted); max-width: 38ch }
+  .claim b { color: var(--paper); font-weight: 600 }
+
+  .portrait { position: relative; justify-self: end; width: 100%; max-width: 268px }
+  .portrait img {
+    width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: 50% 22%;
+    display: block; border: 1px solid var(--rule);
+    filter: saturate(1.04) contrast(1.02);
+  }
+  .portrait::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(190deg, transparent 58%, rgba(20,18,16,.5));
+    pointer-events: none;
+  }
+  .portrait .cap {
+    position: absolute; left: 14px; bottom: 13px; z-index: 2;
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--paper);
+  }
+  .portrait .cap i { font-style: normal; color: var(--gold) }
+
+  /* ---------- faixa ---------- */
+  .band {
+    border-block: 1px solid var(--rule); background: var(--surface);
+    overflow: hidden; padding-block: 14px;
+  }
+  .band-row { display: flex; width: max-content; animation: slide 38s linear infinite }
+  .band-row span {
+    font-family: var(--mono); font-size: 12.5px; color: var(--muted2);
+    letter-spacing: .14em; text-transform: uppercase; padding-inline: 26px; white-space: nowrap;
+  }
+  .band-row span i { font-style: normal; color: var(--gold) }
+  @keyframes slide { to { transform: translateX(-50%) } }
+
+  /* ---------- seções ---------- */
+  section { padding-block: 78px }
+  .tag {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--gold); margin: 0 0 18px;
+  }
+  .lede {
+    font-size: clamp(25px, 4.1vw, 46px); font-weight: 700; font-stretch: 106%;
+    line-height: 1.05; letter-spacing: -.032em; margin: 0 0 20px; max-width: 19ch;
+  }
+  .lede em { font-style: normal; color: var(--blue) }
+  p { margin: 0 0 14px; color: var(--muted); font-size: 17px; max-width: 56ch }
+  p:last-child { margin-bottom: 0 }
+  p b { color: var(--paper); font-weight: 600 }
+
+  .areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(214px, 1fr)); gap: 1px;
+           background: var(--rule); border: 1px solid var(--rule); margin-top: 28px }
+  .area { background: var(--surface); padding: 24px; transition: background .25s }
+  .area:hover { background: var(--surface2) }
+  .area .n { font-family: var(--mono); font-size: 12px; color: var(--gold); letter-spacing: .14em; display: block; margin-bottom: 13px }
+  .area h3 { margin: 0 0 7px; font-size: 19px; font-weight: 700; letter-spacing: -.018em }
+  .area p { margin: 0; font-size: 15px; max-width: none }
+
+  /* ---------- projeto ---------- */
+  .card { border: 1px solid var(--rule); background: var(--surface); margin-top: 28px; overflow: hidden }
+  .shots {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  @media (max-width: 720px) {
+    .shots { grid-template-columns: 1fr 1fr }
+    .shot img { height: 132px }
+  }
+
+  .shot {
+    position: relative; display: block; padding: 0; border: 0; cursor: pointer;
+    background: var(--ink); overflow: hidden; isolation: isolate; text-align: left;
+    font: inherit; color: inherit;
+  }
+  .shot img {
+    width: 100%; height: 148px; aspect-ratio: auto; object-fit: cover; object-position: left top;
+    display: block;
+    transition: transform .55s cubic-bezier(.16,.84,.26,1), filter .35s;
+    filter: saturate(.92) brightness(.9);
+  }
+  .shot::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 42%, rgba(12,10,9,.9));
+    pointer-events: none;
+  }
+  .shot:hover img, .shot:focus-visible img { transform: scale(1.045); filter: saturate(1) brightness(1) }
+  .shot:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px }
+
+  .shot-lbl {
+    position: absolute; left: 11px; right: 11px; bottom: 9px; z-index: 2; display: grid; gap: 0;
+  }
+  .shot-lbl b {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--paper);
+  }
+  .shot-lbl i {
+    font-style: normal; font-size: 10.5px; line-height: 1.3; color: var(--muted2);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .shot-zoom {
+    position: absolute; right: 9px; top: 9px; z-index: 2;
+    width: 26px; height: 26px; display: grid; place-items: center;
+    border: 1px solid rgba(242,237,227,.25); color: var(--paper);
+    background: rgba(12,10,9,.45); backdrop-filter: blur(4px);
+    opacity: 0; transform: scale(.88);
+    transition: opacity .3s, transform .35s cubic-bezier(.16,.84,.26,1), background .3s, border-color .3s;
+  }
+  .shot-zoom svg { width: 13px; height: 13px }
+  .shot:hover .shot-zoom, .shot:focus-visible .shot-zoom {
+    opacity: 1; transform: scale(1); background: var(--blue); border-color: var(--blue);
+  }
+
+  .card-body { padding: 32px 30px 34px }
+  .card-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-bottom: 14px }
+  .card-body .code { font-family: var(--mono); font-size: 12px; color: var(--gold); letter-spacing: .16em; margin: 0 }
+  .badges { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; margin: 0; padding: 0 }
+  .badges li {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    padding: 4px 10px; border: 1px solid var(--rule); color: var(--muted2);
+  }
+  .badges li.on { color: var(--paper); border-color: var(--blue); position: relative; padding-left: 22px }
+  .badges li.on::before {
+    content: ""; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+    width: 6px; height: 6px; border-radius: 50%; background: var(--blue-lt);
+  }
+  .card-body h3 { margin: 0 0 22px; font-size: clamp(23px, 3vw, 33px); font-weight: 800; font-stretch: 106%; letter-spacing: -.028em; line-height: 1.04 }
+  .sub-h {
+    margin: 28px 0 12px; font-family: var(--mono); font-size: 11.5px; font-weight: 500;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--gold);
+  }
+  .solved { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule) }
+  .solved li { background: var(--surface); padding: 14px 17px; font-size: 15.5px; color: var(--muted); transition: background .22s }
+  .solved li:hover { background: var(--surface2) }
+  .solved li b { color: var(--paper); font-weight: 600 }
+  .living {
+    margin: 26px 0 28px; font-size: 16px; color: var(--muted); max-width: 62ch;
+    border-left: 2px solid var(--blue); padding-left: 16px;
+  }
+
+  .pair { display: grid; gap: 15px; margin-bottom: 4px; max-width: 70ch }
+  .pair > div { display: grid; grid-template-columns: 5.5rem 1fr; gap: 16px; align-items: baseline }
+  .pair dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase }
+  .pair .p dt { color: var(--muted2) }
+  .pair .s dt { color: var(--blue-lt) }
+  .pair dd { margin: 0; font-size: 16.5px; color: var(--paper) }
+  @media (max-width: 480px) { .pair > div { grid-template-columns: 1fr; gap: 3px } }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px }
+  .chip { font-family: var(--mono); font-size: 11.5px; padding: 6px 11px; border: 1px solid var(--rule); color: var(--muted2); transition: border-color .2s, color .2s }
+  .chip:hover { border-color: var(--gold); color: var(--gold) }
+
+  /* Botão: duas camadas de texto que trocam de lugar, varredura diagonal e
+     um deslocamento magnético de poucos pixels em direção ao cursor. */
+  .demo-btn {
+    position: relative; display: inline-flex; align-items: center; gap: 14px;
+    border: 1px solid var(--blue); background: transparent; color: var(--paper);
+    font-family: var(--mono); font-size: 13px; letter-spacing: .12em;
+    text-transform: uppercase; padding: 0 26px; height: 56px; cursor: pointer;
+    overflow: hidden; isolation: isolate; will-change: transform;
+  }
+  .demo-btn::before {
+    content: ""; position: absolute; inset: -1px; z-index: -1; background: var(--blue);
+    transform: translate3d(-101%, 0, 0) skewX(-12deg); transform-origin: left;
+    transition: transform .5s cubic-bezier(.16,.84,.26,1);
+  }
+  .demo-btn:hover::before, .demo-btn:focus-visible::before { transform: translate3d(0,0,0) skewX(-12deg) }
+  .demo-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px }
+
+  .demo-btn .flip { position: relative; display: block; overflow: hidden; height: 1.1em }
+  .demo-btn .flip span {
+    display: block; transition: transform .42s cubic-bezier(.16,.84,.26,1);
+  }
+  .demo-btn .flip span + span { position: absolute; inset: 0; transform: translateY(105%) }
+  .demo-btn:hover .flip span, .demo-btn:focus-visible .flip span { transform: translateY(-105%) }
+  .demo-btn:hover .flip span + span, .demo-btn:focus-visible .flip span + span { transform: translateY(0) }
+
+  .demo-btn .ring {
+    width: 26px; height: 26px; flex: none; border-radius: 50%;
+    border: 1px solid currentColor; display: grid; place-items: center;
+    transition: background .35s, color .35s, transform .45s cubic-bezier(.16,.84,.26,1);
+  }
+  .demo-btn:hover .ring, .demo-btn:focus-visible .ring { background: var(--paper); color: var(--blue); transform: rotate(45deg) }
+  .demo-btn .ring svg { width: 11px; height: 11px; display: block }
+  .demo-btn:active { transform: translateY(1px) }
+
+  /* ---------- galeria modal ---------- */
+  .lb {
+    position: fixed; inset: 0; z-index: 90; display: grid; place-items: center;
+    background: rgba(12,10,9,.94); padding: 22px;
+  }
+  .lb[hidden] { display: none }
+  .lb-box { width: min(1080px, 100%); max-height: 100%; display: grid; gap: 14px }
+  .lb-head {
+    display: flex; align-items: center; gap: 16px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted2);
+  }
+  .lb-head .sep { flex: 1 }
+  .lb-close {
+    background: transparent; border: 1px solid var(--rule); color: var(--paper);
+    font-family: var(--mono); font-size: 12px; padding: 9px 15px; cursor: pointer;
+    letter-spacing: .1em; text-transform: uppercase;
+  }
+  .lb-close:hover { border-color: var(--gold); color: var(--gold) }
+  .lb-close:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px }
+  .lb-stage { border: 1px solid var(--rule); background: var(--surface); overflow: hidden }
+  .lb-stage img { width: 100%; display: block }
+  .lb-ph {
+    aspect-ratio: 16/10; display: grid; place-content: center; gap: 8px; text-align: center;
+    background: repeating-linear-gradient(135deg, rgba(42,116,214,.07) 0 12px, transparent 12px 24px), var(--surface);
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: .1em; color: var(--muted2);
+  }
+  .lb-ph b { color: var(--gold); font-size: 22px; font-weight: 500 }
+  .lb-cap { font-size: 15px; color: var(--muted); margin: 0 }
+  .lb-nav { display: flex; gap: 8px; flex-wrap: wrap }
+  .lb-dot {
+    background: transparent; border: 1px solid var(--rule); color: var(--muted2);
+    font-family: var(--mono); font-size: 11.5px; padding: 7px 12px; cursor: pointer;
+    letter-spacing: .08em;
+  }
+  .lb-dot[aria-current="true"] { border-color: var(--blue); color: var(--paper); background: var(--surface2) }
+  .lb-dot:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px }
+
+  /* ---------- quem sou ---------- */
+  .who { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 26px }
+  @media (max-width: 860px) { .who { grid-template-columns: 1fr; gap: 34px } }
+  .track { position: relative }
+  .tline { position: absolute; left: 4px; top: 6px; bottom: 6px; width: 1px; background: var(--rule) }
+  .tfill { display: block; width: 100%; height: 0%; background: var(--blue) }
+  .steps { display: grid; gap: 20px; padding-left: 26px }
+  .step { position: relative }
+  .step::before {
+    content: ""; position: absolute; left: -26px; top: 6px; width: 9px; height: 9px; border-radius: 50%;
+    background: var(--surface2); border: 1px solid var(--rule);
+    transition: background .35s, box-shadow .35s, border-color .35s;
+  }
+  .step.lit::before { background: var(--blue-lt); border-color: var(--blue-lt); box-shadow: 0 0 13px rgba(42,116,214,.7) }
+  .step b { display: block; font-family: var(--mono); font-size: 12.5px; color: var(--gold); margin-bottom: 3px }
+  .step h5 { margin: 0; font-size: 16.5px; font-weight: 600; letter-spacing: -.012em }
+  .step span { font-size: 14.5px; color: var(--muted2) }
+
+  .facts { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule) }
+  .fact { background: var(--surface); padding: 15px 18px; display: flex; justify-content: space-between; gap: 16px; align-items: baseline }
+  .fact dt { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted2) }
+  .fact dd { margin: 0; font-size: 15px; color: var(--paper); text-align: right }
+  .tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px }
+  .tool { font-family: var(--mono); font-size: 11.5px; padding: 5px 10px; border: 1px solid var(--rule); color: var(--muted2); transition: border-color .2s, color .2s }
+  .tool:hover { border-color: var(--gold); color: var(--gold) }
+
+  /* ---------- rodapé ---------- */
+  footer { padding-block: 62px 78px; border-top: 1px solid var(--rule) }
+  .sig-big {
+    font-size: clamp(36px, 8.4vw, 96px); font-weight: 900; font-stretch: 112%;
+    line-height: .88; letter-spacing: -.04em; margin: 0 0 24px; text-transform: uppercase;
+  }
+  .sig-big a { color: inherit; text-decoration: none; transition: color .25s }
+  .sig-big a:hover { color: var(--blue-lt) }
+  .sig-big a:focus-visible { outline: 3px solid var(--gold); outline-offset: 6px }
+  .fmeta { display: flex; flex-wrap: wrap; gap: 10px 26px; font-family: var(--mono); font-size: 12.5px; color: var(--muted2) }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important }
+    html { scroll-behavior: auto }
+  }
+  html { scroll-behavior: smooth }
+  section[id] { scroll-margin-top: 70px }
+</style>
+
+<div class="prog" id="prog"></div>
+<div class="bar">
+  <b>Anna Paula Nadal</b>
+  <span class="sep"></span>
+  <a href="#faco" class="opt">O que faço</a>
+  <a href="#projetos" class="opt">Projetos</a>
+  <a href="#falar">Contato</a>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Administradora · Comércio Exterior · MBA em Controladoria</p>
+      <h1 id="nome">Anna Paula<br>Nadal<span class="dot">.</span></h1>
+      <p class="claim">
+        <b>Automatizo o que trava a rotina</b> — em pessoal, financeiro, compras ou
+        estoque — e construo as ferramentas que faltam.
+      </p>
+    </div>
+    <figure class="portrait" style="margin:0">
+      <img src="assets/retrato.jpg" alt="Anna Paula Nadal em traje de formatura" width="600" height="800">
+      <figcaption class="cap">Formatura · <i>UEPG</i></figcaption>
+    </figure>
+  </header>
+</div>
+
+<div class="band">
+  <div class="band-row" id="band"></div>
+</div>
+
+<div class="wrap">
+  <section id="faco">
+    <p class="tag">O que eu faço</p>
+    <h2 class="lede">Onde há conferência <em>repetida</em>, há coisa a automatizar.</h2>
+    <p>
+      Opero rotina administrativa de verdade e escrevo as ferramentas que ela pede.
+      Não é tecnologia por tecnologia: é o que some do dia quando o sistema passa a fazer.
+    </p>
+
+    <div class="areas">
+      <div class="area"><span class="n">01</span><h3>Automação de rotinas</h3>
+        <p>Python, VBA e Apps Script para o que é repetitivo, manual e dá erro por repetição.</p></div>
+      <div class="area"><span class="n">02</span><h3>Departamento Pessoal</h3>
+        <p>Admissão, rescisão, ponto, benefícios, eSocial e FGTS Digital.</p></div>
+      <div class="area"><span class="n">03</span><h3>Financeiro e controladoria</h3>
+        <p>Conciliação, contas, custo de pessoal e relatório gerencial.</p></div>
+      <div class="area"><span class="n">04</span><h3>Controle e estoque</h3>
+        <p>Inventário, saldo, giro e compra calculada em vez de estimada.</p></div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <p class="tag">Projetos</p>
+    <h2 class="lede">Cada um nasceu de um <em>problema do dia</em>.</h2>
+
+    <article class="card">
+      <div class="shots">
+        <button class="shot" type="button" data-tela="0">
+          <img src="assets/mini-tela-saida.jpg" alt="Tela de saída do sistema" width="640" height="400" loading="lazy">
+          <span class="shot-lbl"><b>Saída</b><i>entrega ao colaborador</i></span>
+          <span class="shot-zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14"/><path d="M7 5v4M5 7h4"/>
+            </svg>
+          </span>
+        </button>
+        <button class="shot" type="button" data-tela="1">
+          <img src="assets/mini-tela-estoque.jpg" alt="Tela de estoque do sistema" width="640" height="400" loading="lazy">
+          <span class="shot-lbl"><b>Estoque</b><i>saldo por item e tamanho</i></span>
+          <span class="shot-zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14"/><path d="M7 5v4M5 7h4"/>
+            </svg>
+          </span>
+        </button>
+        <button class="shot" type="button" data-tela="2">
+          <img src="assets/mini-tela-reposicao.jpg" alt="Tela de reposição do sistema" width="640" height="400" loading="lazy">
+          <span class="shot-lbl"><b>Reposição</b><i>requisição calculada</i></span>
+          <span class="shot-zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14"/><path d="M7 5v4M5 7h4"/>
+            </svg>
+          </span>
+        </button>
+        <button class="shot" type="button" data-tela="3">
+          <img src="assets/mini-tela-cadastro.jpg" alt="Tela de cadastro do sistema" width="640" height="400" loading="lazy">
+          <span class="shot-lbl"><b>Cadastro</b><i>pessoas e obras</i></span>
+          <span class="shot-zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14"/><path d="M7 5v4M5 7h4"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="card-body">
+        <div class="card-head">
+          <p class="code">Projeto 01</p>
+          <ul class="badges">
+            <li class="on">Em uso diário</li>
+            <li>Gratuito</li>
+            <li>100% online</li>
+            <li>Em evolução</li>
+          </ul>
+        </div>
+        <h3>Controle de estoque de EPI e uniformes</h3>
+
+        <dl class="pair">
+          <div class="p"><dt>Problema</dt><dd>O controle vivia em ficha de papel, e ninguém sabia quanto havia de cada item e tamanho até a prateleira esvaziar.</dd></div>
+          <div class="s"><dt>Solução</dt><dd>Um sistema no navegador que dá saldo em tempo real e transforma a compra do mês em cálculo, não em chute.</dd></div>
+        </dl>
+
+        <h4 class="sub-h">O que ele resolveu</h4>
+        <ul class="solved">
+          <li><b>Saldo que não existia.</b> Passou a haver posição por item e por tamanho, não só por pessoa.</li>
+          <li><b>Compra no chute.</b> A requisição sai calculada por consumo e cobertura em dias.</li>
+          <li><b>Certificado vencido passando batido.</b> O sistema sinaliza antes da entrega sair.</li>
+          <li><b>Ficha extraviada.</b> Toda retirada fica registrada com operador, data e conferência.</li>
+          <li><b>Compra duplicada.</b> O que já está em trânsito entra no cálculo e deixa de ser pedido de novo.</li>
+        </ul>
+
+        <h4 class="sub-h">Também faz</h4>
+        <div class="chips">
+          <span class="chip">Entrada por nota fiscal</span>
+          <span class="chip">Remessa para obra</span>
+          <span class="chip">Contagem de inventário</span>
+          <span class="chip">Relatórios de consumo</span>
+          <span class="chip">Catálogo de itens e modelos</span>
+          <span class="chip">Cadastro de pessoas e obras</span>
+          <span class="chip">Histórico por colaborador</span>
+          <span class="chip">Impressão de ficha</span>
+        </div>
+
+        <p class="living">
+          Roda no navegador, sem instalação e sem custo de licença. Segue recebendo
+          ajustes conforme a operação pede — cada tela nova nasceu de um pedido de
+          quem usa todo dia.
+        </p>
+
+        <button class="demo-btn" id="openDemo" type="button">
+          <span class="flip"><span>Ver as telas</span><span>Abrir galeria</span></span>
+          <span class="ring" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M2 10 L10 2 M4 2 h6 v6"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </article>
+  </section>
+</div>
+
+<div class="wrap">
+  <section id="quem">
+    <p class="tag">Quem sou</p>
+    <h2 class="lede">Comecei conferindo número. Hoje escrevo <em>o que confere</em>.</h2>
+
+    <div class="who">
+      <div class="track">
+        <div class="tline"><span class="tfill" id="tfill"></span></div>
+        <div class="steps">
+          <div class="step"><b>2022</b><h5>Assistente administrativo</h5><span>UEPG</span></div>
+          <div class="step"><b>2023</b><h5>Financeiro</h5><span>Conciliação, contas, auditoria interna</span></div>
+          <div class="step"><b>2024</b><h5>Departamento Pessoal</h5><span>Ponto, benefícios, folha</span></div>
+          <div class="step"><b>2025</b><h5>Compras e suprimentos</h5><span>Inventário e estoque</span></div>
+          <div class="step"><b>Hoje</b><h5>DP e Segurança do Trabalho</h5><span>Operação de 370 pessoas</span></div>
+        </div>
+      </div>
+      <div>
+        <dl class="facts">
+          <div class="fact"><dt>Formação</dt><dd>Administração com ênfase em Comércio Exterior — UEPG</dd></div>
+          <div class="fact"><dt>Pós</dt><dd>MBA em Gestão Financeira e Controladoria</dd></div>
+          <div class="fact"><dt>Onde</dt><dd>Araucária, PR</dd></div>
+          <div class="fact"><dt>Experiência</dt><dd><span data-count="4">0</span> anos em rotina administrativa</dd></div>
+        </dl>
+        <div class="tools">
+          <span class="tool">Python</span>
+          <span class="tool">VBA para Excel</span>
+          <span class="tool">Google Apps Script</span>
+          <span class="tool">Excel avançado</span>
+          <span class="tool">Google Sheets</span>
+          <span class="tool">eSocial</span>
+          <span class="tool">FGTS Digital</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="falar">
+    <p class="sig-big"><a href="https://www.linkedin.com/in/anna-paula-nadal">Vamos<br>conversar</a></p>
+    <div class="fmeta">
+      <span>Araucária, PR</span>
+      <span>linkedin.com/in/anna-paula-nadal</span>
+    </div>
+  </footer>
+</div>
+
+<!-- galeria do sistema -->
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Telas do sistema">
+  <div class="lb-box">
+    <div class="lb-head">
+      <span>Sistema de almoxarifado · demonstração</span>
+      <span class="sep"></span>
+      <button class="lb-close" id="lbClose" type="button">Fechar ✕</button>
+    </div>
+    <div class="lb-stage" id="lbStage"></div>
+    <p class="lb-cap" id="lbCap"></p>
+    <div class="lb-nav" id="lbNav"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- faixa rolante ---------- */
+  var TERMOS = ['Departamento Pessoal', 'Automação de rotinas', '<i>Python</i>',
+    'Conciliação', 'Controle de estoque', '<i>VBA</i>', 'eSocial',
+    'Custo de pessoal', '<i>Apps Script</i>', 'Inventário', 'Comércio exterior',
+    '<i>Excel avançado</i>', 'Controladoria'];
+  var band = document.getElementById('band');
+  if (band) {
+    var linha = TERMOS.map(function (t) { return '<span>' + t + '</span>'; }).join('');
+    band.innerHTML = linha + linha;
+  }
+
+  /* ---------- galeria: troque/adicione itens aqui ---------- */
+  var TELAS = [
+    { src: 'assets/tela-saida.jpg', t: 'Saída',
+      cap: 'Entrega nominal ao colaborador. As medidas da pessoa já vêm preenchidas e cada item mostra saldo e estado do certificado antes da entrega.' },
+    { src: 'assets/tela-estoque.jpg', t: 'Estoque',
+      cap: 'Posição por item e tamanho, com mínimo, consumo por dia, cobertura projetada e situação do certificado.' },
+    { src: 'assets/tela-reposicao.jpg', t: 'Reposição',
+      cap: 'Requisição calculada: o sistema projeta a cobertura contra o próximo pedido e sugere o que comprar e quanto.' },
+    { src: 'assets/tela-cadastro.jpg', t: 'Cadastro',
+      cap: 'Colaboradores com grade de tamanhos e obras de destino. Quem tem movimento no livro só pode ser arquivado, nunca excluído.' }
+  ];
+
+  var lb = document.getElementById('lb'),
+      stage = document.getElementById('lbStage'),
+      cap = document.getElementById('lbCap'),
+      nav = document.getElementById('lbNav'),
+      btnOpen = document.getElementById('openDemo'),
+      btnClose = document.getElementById('lbClose'),
+      ultimoFoco = null, atual = 0;
+
+  function pintar(i) {
+    atual = i;
+    var t = TELAS[i];
+    stage.innerHTML = t.src
+      ? '<img src="' + t.src + '" alt="' + t.cap.replace(/"/g, '') + '">'
+      : '<div class="lb-ph"><b>+</b><span>Captura ainda não adicionada</span></div>';
+    cap.textContent = t.cap;
+    nav.querySelectorAll('button').forEach(function (b, k) {
+      b.setAttribute('aria-current', String(k === i));
+    });
+    if (window.gsap) gsap.fromTo(stage, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .35, ease: 'power2.out' });
+  }
+
+  nav.innerHTML = TELAS.map(function (t, i) {
+    return '<button class="lb-dot" type="button">' + (t.t || ('Tela ' + (i + 1))) + '</button>';
+  }).join('');
+  nav.querySelectorAll('button').forEach(function (b, i) {
+    b.addEventListener('click', function () { pintar(i); });
+  });
+
+  function abrir(i) {
+    ultimoFoco = document.activeElement;
+    lb.hidden = false;
+    pintar(i || 0);
+    btnClose.focus();
+    document.body.style.overflow = 'hidden';
+    if (window.gsap) {
+      gsap.fromTo(lb, { opacity: 0 }, { opacity: 1, duration: .25, ease: 'power2.out' });
+      gsap.from('.lb-box', { y: 24, duration: .4, ease: 'power3.out' });
+    }
+  }
+  function fechar() {
+    lb.hidden = true;
+    document.body.style.overflow = '';
+    if (ultimoFoco) ultimoFoco.focus();
+  }
+  btnOpen.addEventListener('click', function () { abrir(0); });
+  document.querySelectorAll('.shot').forEach(function (s) {
+    s.addEventListener('click', function () { abrir(+s.dataset.tela || 0); });
+  });
+  btnClose.addEventListener('click', fechar);
+  lb.addEventListener('click', function (e) { if (e.target === lb) fechar(); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') fechar();
+    if (e.key === 'ArrowRight') pintar((atual + 1) % TELAS.length);
+    if (e.key === 'ArrowLeft') pintar((atual - 1 + TELAS.length) % TELAS.length);
+  });
+
+  /* ---------- animação ---------- */
+  if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  var nome = document.getElementById('nome');
+  nome.innerHTML = nome.innerHTML.split('<br>').map(function (linha) {
+    return linha.replace(/<span class="dot">\.<\/span>/, '§').split(' ').map(function (p) {
+      return '<span class="w">' + p.split('').map(function (ch) {
+        return ch === '§' ? '<span class="l dot">.</span>' : '<span class="l">' + ch + '</span>';
+      }).join('') + '</span>';
+    }).join(' ');
+  }).join('<br>');
+
+  gsap.timeline()
+    .from('.bar', { yPercent: -100, duration: .5, ease: 'power3.out' })
+    .from('.eyebrow', { opacity: 0, duration: .4 }, '-=.2')
+    .from('#nome .l', { yPercent: 118, duration: .8, ease: 'power4.out', stagger: .016 }, '-=.1')
+    .from('.claim', { y: 20, opacity: 0, duration: .55, ease: 'power2.out' }, '-=.45')
+    .from('.portrait', { opacity: 0, scale: 1.04, duration: .9, ease: 'power3.out' }, '-=.75')
+    .from('.portrait .cap', { y: 10, opacity: 0, duration: .4 }, '-=.3');
+
+  gsap.to('#prog', { width: '100%', ease: 'none',
+    scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: .3 } });
+
+  gsap.to('#nome', { yPercent: -9, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .5 } });
+  gsap.to('.portrait img', { yPercent: -5, scale: 1.05, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .6 } });
+
+  function reveal(sel, cfg) {
+    gsap.utils.toArray(sel).forEach(function (el) {
+      gsap.from(el, Object.assign({
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+        y: 24, opacity: 0, duration: .65, ease: 'power3.out'
+      }, cfg || {}));
+    });
+  }
+  reveal('section > .tag');
+  reveal('section > .lede', { y: 32 });
+  reveal('section > p');
+
+  gsap.from('.area', {
+    scrollTrigger: { trigger: '.areas', start: 'top 86%', once: true },
+    y: 26, opacity: 0, duration: .55, stagger: .08, ease: 'power3.out'
+  });
+  gsap.from('.card', {
+    scrollTrigger: { trigger: '.card', start: 'top 88%', once: true },
+    y: 30, opacity: 0, duration: .7, ease: 'power3.out'
+  });
+  gsap.from('.shot', {
+    scrollTrigger: { trigger: '.shots', start: 'top 88%', once: true },
+    y: 20, opacity: 0, duration: .6, stagger: .09, ease: 'power3.out'
+  });
+
+  // Imã: o botão desliza alguns pixels na direção do cursor e volta ao sair.
+  var mag = document.getElementById('openDemo');
+  if (mag && window.matchMedia('(hover: hover)').matches) {
+    mag.addEventListener('mousemove', function (e) {
+      var r = mag.getBoundingClientRect();
+      gsap.to(mag, {
+        x: (e.clientX - r.left - r.width / 2) * .16,
+        y: (e.clientY - r.top - r.height / 2) * .22,
+        duration: .5, ease: 'power3.out'
+      });
+    });
+    mag.addEventListener('mouseleave', function () {
+      gsap.to(mag, { x: 0, y: 0, duration: .6, ease: 'elastic.out(1,.45)' });
+    });
+  }
+  gsap.from('.demo-btn', {
+    scrollTrigger: { trigger: '.demo-btn', start: 'top 92%', once: true },
+    y: 14, opacity: 0, duration: .5, ease: 'power3.out'
+  });
+
+  var tfill = document.getElementById('tfill');
+  if (tfill) {
+    gsap.to(tfill, { height: '100%', ease: 'none',
+      scrollTrigger: { trigger: '.track', start: 'top 76%', end: 'bottom 74%', scrub: .4 } });
+    gsap.utils.toArray('.step').forEach(function (s, i) {
+      gsap.from(s, {
+        scrollTrigger: { trigger: '.track', start: 'top 84%', once: true },
+        x: -20, opacity: 0, duration: .5, delay: i * .09, ease: 'power3.out'
+      });
+      ScrollTrigger.create({ trigger: s, start: 'top 80%', once: true,
+        onEnter: function () { s.classList.add('lit'); } });
+    });
+  }
+
+  gsap.from('.fact', {
+    scrollTrigger: { trigger: '.facts', start: 'top 88%', once: true },
+    x: 18, opacity: 0, duration: .45, stagger: .06, ease: 'power3.out'
+  });
+  gsap.from('.tool', {
+    scrollTrigger: { trigger: '.tools', start: 'top 92%', once: true },
+    scale: .85, opacity: 0, duration: .38, stagger: .035, ease: 'back.out(2)'
+  });
+
+  document.querySelectorAll('[data-count]').forEach(function (el) {
+    var alvo = +el.dataset.count, o = { v: 0 };
+    ScrollTrigger.create({ trigger: el, start: 'top 92%', once: true, onEnter: function () {
+      gsap.to(o, { v: alvo, duration: 1.2, ease: 'power2.out',
+        onUpdate: function () { el.textContent = Math.round(o.v); } });
+    } });
+  });
+
+  gsap.from('.sig-big', {
+    scrollTrigger: { trigger: 'footer', start: 'top 88%', once: true },
+    y: 34, opacity: 0, duration: .7, ease: 'power3.out'
+  });
+})();
+</script>
