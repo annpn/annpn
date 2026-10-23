@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
 
 <style>
+  /* Paleta lida da fotografia de formatura: o azul royal da capa, o travertino
+     dourado da parede e o preto da beca. Nenhuma cor foi escolhida fora dela. */
   :root {
     --ink:      #141210;
     --surface:  #1e1a16;
@@ -161,7 +163,7 @@
     letter-spacing: .1em; text-transform: uppercase; color: var(--paper);
   }
   .shot-lbl i {
-    font-style: normal; font-size: 10.5px; line-height: 1.3; color: var(--muted2);
+    font-style: normal; font-size: 11.5px; line-height: 1.3; color: var(--muted2);
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   .shot-zoom {
@@ -224,6 +226,7 @@
     font-family: var(--mono); font-size: 13px; letter-spacing: .12em;
     text-transform: uppercase; padding: 0 26px; height: 56px; cursor: pointer;
     overflow: hidden; isolation: isolate; will-change: transform;
+    text-decoration: none;
   }
   .demo-btn::before {
     content: ""; position: absolute; inset: -1px; z-index: -1; background: var(--blue);
@@ -472,14 +475,15 @@
           quem usa todo dia.
         </p>
 
-        <button class="demo-btn" id="openDemo" type="button">
-          <span class="flip"><span>Ver as telas</span><span>Abrir galeria</span></span>
+        <a class="demo-btn" id="openDemo" href="demo/demo-publica.html"
+           target="_blank" rel="noopener">
+          <span class="flip"><span>Acessar demo</span><span aria-hidden="true">Entrar</span></span>
           <span class="ring" aria-hidden="true">
             <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6">
               <path d="M2 10 L10 2 M4 2 h6 v6"/>
             </svg>
           </span>
-        </button>
+        </a>
       </div>
     </article>
   </section>
@@ -577,7 +581,6 @@
       stage = document.getElementById('lbStage'),
       cap = document.getElementById('lbCap'),
       nav = document.getElementById('lbNav'),
-      btnOpen = document.getElementById('openDemo'),
       btnClose = document.getElementById('lbClose'),
       ultimoFoco = null, atual = 0;
 
@@ -617,7 +620,6 @@
     document.body.style.overflow = '';
     if (ultimoFoco) ultimoFoco.focus();
   }
-  btnOpen.addEventListener('click', function () { abrir(0); });
   document.querySelectorAll('.shot').forEach(function (s) {
     s.addEventListener('click', function () { abrir(+s.dataset.tela || 0); });
   });
