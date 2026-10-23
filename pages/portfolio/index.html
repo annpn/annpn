@@ -1,4 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anna Paula Nadal</title>
+<meta name="description" content="Administradora com ênfase em comércio exterior e MBA em controladoria. Automatizo o que trava a rotina — em pessoal, financeiro, compras ou estoque — e construo as ferramentas que faltam.">
+<meta name="author" content="Anna Paula Nadal">
+<link rel="canonical" href="https://annpn.github.io/annpn/pages/portfolio/">
+<link rel="icon" href="assets/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Anna Paula Nadal">
+<meta property="og:title" content="Anna Paula Nadal — Administração e automação de rotina">
+<meta property="og:description" content="Automatizo o que trava a rotina — em pessoal, financeiro, compras ou estoque — e construo as ferramentas que faltam.">
+<meta property="og:url" content="https://annpn.github.io/annpn/pages/portfolio/">
+<meta property="og:image" content="https://annpn.github.io/annpn/pages/portfolio/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Anna Paula Nadal, administradora — comércio exterior e MBA em controladoria">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -66,6 +89,12 @@
     letter-spacing: -.04em; text-transform: uppercase;
   }
   h1 .w { display: inline-block; white-space: nowrap }
+  /* Abaixo de 520px o piso de 44px do clamp passa a mandar e "ANNA PAULA"
+     fica mais largo que a coluna. O piso cai e a expansao volta ao normal:
+     fonte expandida custa largura que celular nao tem. */
+  @media (max-width: 520px) {
+    h1 { font-size: clamp(29px, 8.6vw, 44px); font-stretch: 104% }
+  }
   h1 .l { display: inline-block; will-change: transform }
   h1 .dot { color: var(--blue) }
   .claim { margin: 0; font-size: clamp(18px, 2.1vw, 23px); line-height: 1.4; color: var(--muted); max-width: 38ch }
@@ -335,6 +364,9 @@
   html { scroll-behavior: smooth }
   section[id] { scroll-margin-top: 70px }
 </style>
+</head>
+
+<body>
 
 <div class="prog" id="prog"></div>
 <div class="bar">
@@ -743,3 +775,7 @@
   });
 })();
 </script>
+
+</body>
+
+</html>
