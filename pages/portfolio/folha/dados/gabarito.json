@@ -1,0 +1,118 @@
+{
+  "competencia": "2026-08",
+  "base_legal": {
+    "inss": "Portaria Interministerial MPS/MF no 13, de 09/01/2026",
+    "irrf": "Lei 15.191, de 11/08/2025",
+    "redutor": "Lei 15.270, de 26/11/2025",
+    "fgts": "Lei 8.036/1990 art. 15"
+  },
+  "tributos": [
+    {
+      "base": 0.0,
+      "dependentes": 0,
+      "inss": 0.0,
+      "irrf": 0.0,
+      "via": "simplificada",
+      "fgts": 0.0
+    },
+    {
+      "base": 1621.0,
+      "dependentes": 0,
+      "inss": 121.57,
+      "irrf": 0.0,
+      "via": "simplificada",
+      "fgts": 129.68
+    },
+    {
+      "base": 2428.8,
+      "dependentes": 0,
+      "inss": 194.28,
+      "irrf": 0.0,
+      "via": "simplificada",
+      "fgts": 194.3
+    },
+    {
+      "base": 2902.84,
+      "dependentes": 0,
+      "inss": 236.94,
+      "irrf": 0.0,
+      "via": "simplificada",
+      "fgts": 232.23
+    },
+    {
+      "base": 3200.0,
+      "dependentes": 1,
+      "inss": 272.6,
+      "irrf": 0.0,
+      "via": "simplificada",
+      "fgts": 256.0
+    },
+    {
+      "base": 4354.27,
+      "dependentes": 0,
+      "inss": 411.11,
+      "irrf": 0.0,
+      "via": "simplificada",
+      "fgts": 348.34
+    },
+    {
+      "base": 5000.0,
+      "dependentes": 0,
+      "inss": 501.51,
+      "irrf": 0.0,
+      "via": "simplificada",
+      "fgts": 400.0
+    },
+    {
+      "base": 6000.0,
+      "dependentes": 0,
+      "inss": 641.51,
+      "irrf": 385.1,
+      "via": "legal",
+      "fgts": 480.0
+    },
+    {
+      "base": 7350.0,
+      "dependentes": 0,
+      "inss": 830.51,
+      "irrf": 884.13,
+      "via": "legal",
+      "fgts": 588.0
+    },
+    {
+      "base": 8000.0,
+      "dependentes": 0,
+      "inss": 921.51,
+      "irrf": 1037.85,
+      "via": "legal",
+      "fgts": 640.0
+    },
+    {
+      "base": 8000.0,
+      "dependentes": 2,
+      "inss": 921.51,
+      "irrf": 933.58,
+      "via": "legal",
+      "fgts": 640.0
+    },
+    {
+      "base": 8475.55,
+      "dependentes": 0,
+      "inss": 988.09,
+      "irrf": 1150.32,
+      "via": "legal",
+      "fgts": 678.04
+    },
+    {
+      "base": 14000.0,
+      "dependentes": 3,
+      "inss": 988.09,
+      "irrf": 2513.13,
+      "via": "legal",
+      "fgts": 1120.0
+    }
+  ],
+  "ponto": {
+    "arquivo": "ponto_diario_2026-08.csv"
+  }
+}

@@ -1,0 +1,649 @@
+/* Estilos de modulo: importacao, log, medidor, planilha modelo e o holerite. */
+
+.carregando-inicial {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: var(--fundo);
+}
+
+/* Importacao */
+
+.caminhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1px;
+  background: var(--borda);
+  border: 1px solid var(--borda);
+  border-radius: var(--r-3);
+  overflow: hidden;
+}
+
+.caminho-opcao {
+  background: var(--superficie);
+  padding: var(--e-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+  align-items: flex-start;
+}
+
+.caminho-opcao .ordem {
+  font-family: var(--fonte-mono);
+  font-size: var(--t-10);
+  font-weight: var(--peso-medio);
+  letter-spacing: 0.1em;
+  color: var(--marca);
+}
+
+.caminho-opcao h3 {
+  font-size: var(--t-16);
+  font-weight: var(--peso-forte);
+}
+
+.caminho-opcao p {
+  font-size: var(--t-12);
+  color: var(--texto-3);
+  line-height: 1.5;
+  max-width: 44ch;
+}
+
+.caminho-opcao .acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  margin-top: var(--e-3);
+}
+
+.zona-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--e-2);
+  padding: var(--e-5);
+  border: 1px dashed var(--borda-forte);
+  border-radius: var(--r-2);
+  background: var(--superficie-2);
+  transition: border-color var(--d-rapido) var(--curva), background var(--d-rapido) var(--curva);
+}
+
+.zona-upload.ativa {
+  border-color: var(--marca);
+  background: var(--marca-tenue);
+}
+
+.zona-titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  font-size: var(--t-13);
+  font-weight: var(--peso-forte);
+}
+
+.zona-titulo .ico {
+  width: 16px;
+  height: 16px;
+  color: var(--texto-3);
+}
+
+.zona-upload.ativa .zona-titulo .ico {
+  color: var(--marca);
+}
+
+.zona-nota {
+  font-size: var(--t-11);
+  color: var(--texto-3);
+}
+
+.zona-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  margin-top: var(--e-2);
+}
+
+/* O input de arquivo e visualmente oculto: o foco dele aparece no rotulo. */
+.zona-upload:focus-within label.btn {
+  outline: 2px solid var(--acento);
+  outline-offset: 1px;
+}
+
+/* Log de processamento */
+
+.log-caixa {
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.log-item {
+  display: flex;
+  gap: var(--e-3);
+  padding: 7px 0;
+  border-bottom: 1px solid var(--regua-grid);
+  font-size: var(--t-12);
+  animation: entrar var(--d-rapido) var(--curva) both;
+}
+
+.log-item:last-child {
+  border-bottom: 0;
+}
+
+.log-marca {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  margin-top: 1px;
+}
+
+.log-item.andamento .log-marca {
+  color: var(--texto-3);
+  animation: girar 0.9s linear infinite;
+}
+
+.log-item.ok .log-marca {
+  color: var(--sucesso);
+}
+
+.log-item.alerta .log-marca {
+  color: var(--alerta);
+}
+
+.log-item.erro .log-marca {
+  color: var(--erro);
+}
+
+.log-texto {
+  display: block;
+  font-weight: var(--peso-medio);
+}
+
+.log-detalhe {
+  display: block;
+  font-family: var(--fonte-mono);
+  font-size: var(--t-11);
+  color: var(--texto-3);
+  margin-top: 2px;
+}
+
+/* Medidor */
+
+.medidor {
+  height: 4px;
+  min-width: 48px;
+  background: var(--superficie-3);
+  overflow: hidden;
+}
+
+/* Cresce por transform: animar largura recalcula layout por linha da tabela. */
+.medidor span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--serie-1);
+  transform-origin: left center;
+  transform: scaleX(var(--fatia, 0));
+  transition: transform var(--d-lento) var(--curva);
+}
+
+/* Planilha modelo */
+
+.planilha-caixa {
+  overflow: auto;
+  max-height: 420px;
+  border-bottom: 1px solid var(--borda);
+  background: var(--superficie);
+}
+
+.planilha {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--t-11);
+  font-variant-numeric: tabular-nums;
+  width: max-content;
+  min-width: 100%;
+}
+
+/* Regua de coluna da planilha: A, B, C -- a referencia que o preenchedor usa. */
+.planilha tr.regua th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  height: 20px;
+  padding: 0 var(--e-2);
+  background: var(--superficie-3);
+  border-right: 1px solid var(--borda-forte);
+  border-bottom: 1px solid var(--borda-forte);
+  font-family: var(--fonte-mono);
+  font-size: var(--t-10);
+  font-weight: var(--peso-medio);
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: none;
+  color: var(--texto-3);
+}
+
+.planilha tr.rotulos th {
+  position: sticky;
+  top: 20px;
+  z-index: 3;
+  padding: 6px var(--e-2);
+  background: var(--n-140);
+  border-right: 1px solid var(--n-120);
+  border-bottom: 1px solid var(--n-120);
+  font-family: var(--fonte-ui);
+  font-size: var(--t-10);
+  font-weight: var(--peso-forte);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.planilha th.canto,
+.planilha td.linha-num {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  width: 34px;
+  min-width: 34px;
+  padding: 0;
+  background: var(--superficie-3);
+  border-right: 1px solid var(--borda-forte);
+  font-family: var(--fonte-mono);
+  font-size: var(--t-10);
+  font-weight: var(--peso-normal);
+  color: var(--texto-3);
+  text-align: center;
+}
+
+.planilha tbody td {
+  height: 22px;
+  padding: 2px var(--e-2);
+  border-right: 1px solid var(--regua-grid);
+  border-bottom: 1px solid var(--regua-grid);
+  color: var(--texto-2);
+  white-space: nowrap;
+}
+
+.planilha tbody td.dado {
+  font-family: var(--fonte-mono);
+  color: var(--texto);
+}
+
+.planilha tbody td.vazia {
+  color: var(--n-70);
+}
+
+.planilha tbody tr:hover td {
+  background: var(--superficie-2);
+}
+
+.planilha tbody tr:hover td.linha-num {
+  background: var(--n-50);
+  color: var(--texto);
+}
+
+.planilha-pe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-2) var(--e-4);
+  padding: 6px var(--e-3);
+  background: var(--superficie-2);
+  font-size: var(--t-11);
+  color: var(--texto-3);
+}
+
+.planilha-aba {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px var(--e-2);
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-bottom-color: var(--superficie);
+  font-size: var(--t-11);
+  font-weight: var(--peso-medio);
+  color: var(--texto-2);
+}
+
+.planilha-aba .ico {
+  width: 12px;
+  height: 12px;
+  color: var(--marca);
+}
+
+.planilha-aba.inativa {
+  background: transparent;
+  border-color: transparent;
+  color: var(--texto-3);
+}
+
+.planilha-aba.inativa .ico {
+  color: var(--texto-3);
+}
+
+/* Previa da planilha dentro da escolha de entrada. */
+.caminho-previa {
+  width: 100%;
+  margin-top: var(--e-3);
+  border: 1px solid var(--borda);
+  border-radius: var(--r-2);
+  overflow: hidden;
+}
+
+.caminho-previa .planilha-caixa {
+  max-height: none;
+  border-bottom: 0;
+  overflow: hidden;
+}
+
+/* Na previa as sete colunas tem de caber: largura fixa e corte com reticencia. */
+.caminho-previa .planilha {
+  width: 100%;
+  table-layout: fixed;
+  font-size: var(--t-10);
+}
+
+.caminho-previa .planilha tbody td,
+.caminho-previa .planilha tr.rotulos th {
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.caminho-previa .planilha th.canto,
+.caminho-previa .planilha td.linha-num {
+  width: 26px;
+  min-width: 26px;
+}
+
+.dicionario td code {
+  font-family: var(--fonte-mono);
+  font-size: var(--t-11);
+  color: var(--texto);
+}
+
+.dicionario .exigido {
+  color: var(--erro);
+  font-weight: var(--peso-forte);
+}
+
+/* Holerite: formulario impresso. Papel nao tem modo escuro. */
+
+.hc-moldura {
+  background: var(--superficie-3);
+  padding: var(--e-3);
+  overflow-x: auto;
+}
+
+.holerite {
+  min-width: 560px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.holerite strong {
+  font-weight: 700;
+}
+
+.hc-faixa {
+  display: flex;
+  gap: var(--e-4);
+  align-items: flex-start;
+  padding: 6px 8px;
+  border-bottom: 1px solid #000;
+}
+
+.hc-faixa strong {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.hc-faixa .hc-sub {
+  display: block;
+  font-size: 10px;
+  color: #000;
+}
+
+.hc-faixa-dir {
+  margin-left: auto;
+  text-align: right;
+}
+
+.hc-ident {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid #000;
+}
+
+.hc-campo {
+  min-width: 0;
+  padding: 4px 8px;
+  border-right: 1px solid #000;
+}
+
+.hc-ident .hc-campo:nth-child(4n) {
+  border-right: 0;
+}
+
+.hc-ident .hc-campo:nth-child(-n + 4) {
+  border-bottom: 1px solid #000;
+}
+
+.hc-rotulo {
+  display: block;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hc-valor {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.holerite .hc-tabela {
+  font-family: inherit;
+  font-size: 11px;
+  border-collapse: collapse;
+}
+
+.holerite .hc-tabela th {
+  position: static;
+  background: #fff;
+  color: #000;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: left;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  padding: 3px 8px;
+}
+
+.holerite .hc-tabela th:last-child,
+.holerite .hc-tabela td:last-child {
+  border-right: 0;
+}
+
+.holerite .hc-tabela th.num,
+.holerite .hc-tabela td.num {
+  text-align: right;
+  font-family: inherit;
+}
+
+.holerite .hc-tabela td {
+  padding: 2px 8px;
+  border-right: 1px solid #000;
+  border-bottom: 0;
+  color: #000;
+  height: auto;
+}
+
+.holerite .hc-cod {
+  font-family: inherit;
+  font-size: 11px;
+  color: #000;
+}
+
+/* O quadro tem altura fixa: poucas verbas nao encolhem o formulario. */
+.holerite .hc-vazia td {
+  height: 16px;
+}
+
+.holerite .hc-tabela tfoot td {
+  background: #fff;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  font-weight: 700;
+  padding: 3px 8px;
+}
+
+.hc-pe {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid #000;
+}
+
+.hc-pe .hc-campo {
+  border-right: 1px solid #000;
+}
+
+.hc-pe .hc-campo:last-child {
+  border-right: 0;
+}
+
+.hc-liquido {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--e-3);
+  padding: 5px 8px;
+  border-bottom: 1px solid #000;
+}
+
+.hc-liquido-rotulo {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hc-liquido-valor {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.hc-nota {
+  padding: 4px 8px;
+  font-size: 9px;
+  border-bottom: 1px solid #000;
+}
+
+.hc-quitacao {
+  padding: 6px 8px 10px;
+  font-size: 9px;
+}
+
+.hc-assina {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: var(--e-6);
+  margin-top: 28px;
+}
+
+.hc-assina span {
+  border-top: 1px solid #000;
+  padding-top: 2px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 680px) {
+  .hc-ident {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hc-ident .hc-campo:nth-child(2n) {
+    border-right: 0;
+  }
+  .hc-pe {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Impressao: so o documento aberto na gaveta vai para o papel. */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  body > .app {
+    display: none !important;
+  }
+  .gaveta-fundo {
+    position: static !important;
+    display: block !important;
+  }
+  .gaveta-veu,
+  .gaveta-topo,
+  .mensagem {
+    display: none !important;
+  }
+  .gaveta {
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+    animation: none;
+  }
+  .gaveta-corpo {
+    padding: 0;
+    overflow: visible;
+  }
+  .hc-moldura {
+    background: #fff;
+    padding: 0;
+  }
+  .holerite {
+    border: 0;
+    min-width: 0;
+  }
+  .dados,
+  .secao > h3 {
+    display: none !important;
+  }
+}
+
+/* Em tela estreita a previa de sete colunas vira ruido; o botao ao lado abre a
+   planilha inteira. */
+@media (max-width: 680px) {
+  .caminho-previa {
+    display: none;
+  }
+}

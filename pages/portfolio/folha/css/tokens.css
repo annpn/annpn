@@ -1,0 +1,174 @@
+/* Tokens. Nenhum componente declara cor, espaco, raio ou duracao. */
+
+:root {
+  /* Red Hat: uma superfamilia para interface, titulo e dado tabular. */
+  --fonte-ui: "Red Hat Text", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fonte-titulo: "Red Hat Display", var(--fonte-ui);
+  --fonte-mono: "Red Hat Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --fonte: var(--fonte-ui);
+
+  --t-10: 10px;
+  --t-11: 11px;
+  --t-12: 12px;
+  --t-13: 13px;
+  --t-14: 14px;
+  --t-16: 16px;
+  --t-18: 18px;
+  --t-22: 22px;
+  --t-28: 28px;
+
+  --peso-normal: 400;
+  --peso-medio: 500;
+  --peso-forte: 600;
+  --peso-pesado: 700;
+
+  /* Neutro quente. O cinza frio de framework e o que da cara de template. */
+  --n-0: #ffffff;
+  --n-10: #faf9f8;
+  --n-20: #f6f4f2;
+  --n-30: #f1efed;
+  --n-40: #e9e6e3;
+  --n-50: #ded9d5;
+  --n-60: #cec8c2;
+  --n-70: #b8b1a9;
+  --n-80: #9c948b;
+  --n-90: #837b72;
+  --n-100: #6b635b;
+  --n-110: #574f48;
+  --n-120: #47403a;
+  --n-130: #3a342e;
+  --n-140: #312d28;
+  --n-150: #262220;
+  --n-160: #1d1a17;
+  --n-170: #15120f;
+
+  --fundo: var(--n-20);
+  --superficie: var(--n-0);
+  --superficie-2: var(--n-10);
+  --superficie-3: var(--n-30);
+  --borda: var(--n-40);
+  --borda-forte: var(--n-60);
+  --regua-grid: #efecea;
+
+  --texto: var(--n-160);
+  --texto-2: var(--n-110);
+  --texto-3: var(--n-100);
+  --texto-invertido: var(--n-0);
+
+  /* Banda de chrome: o topo e a trilha sao escuros e nao mudam com o tema. */
+  --chrome: #15120f;
+  --chrome-2: #211d19;
+  --chrome-borda: #332d27;
+  --chrome-texto: #e7e2db;
+  --chrome-texto-2: #9d958b;
+
+  --marca: #c74634;
+  --marca-forte: #a8341f;
+  --marca-tenue: #fbeeeb;
+  --marca-regua: #c74634;
+
+  --acao: var(--marca);
+  --acao-hover: var(--marca-forte);
+  --acento: #0a5c96;
+  --acento-leve: #e8f1f8;
+
+  --erro: #9b2318;
+  --erro-forte: #7f1c13;
+  --erro-leve: #fdf0ee;
+  --erro-borda: #f0cdc7;
+  --alerta: #8a5a07;
+  --alerta-leve: #fdf6e6;
+  --alerta-borda: #ecd8a6;
+  --sucesso: #1f6b47;
+  --sucesso-leve: #edf6f1;
+  --sucesso-borda: #c0dfcf;
+  --informacao: #0a5c96;
+  --informacao-leve: #e8f1f8;
+  --informacao-borda: #bcd6e8;
+
+  /* Serie categorica em ordem fixa, validada para CVD e contraste. */
+  --serie-1: #0a6eb4;
+  --serie-2: #c74634;
+  --serie-3: #7b4fa8;
+  --serie-4: #1a8a6e;
+  --serie-5: #b8860b;
+
+  --e-1: 4px;
+  --e-2: 8px;
+  --e-3: 12px;
+  --e-4: 16px;
+  --e-5: 20px;
+  --e-6: 24px;
+  --e-8: 32px;
+  --e-10: 40px;
+  --e-12: 48px;
+
+  /* Quadro de dado nao tem canto arredondado. */
+  --r-1: 2px;
+  --r-2: 3px;
+  --r-3: 4px;
+  --r-pill: 999px;
+
+  --sombra-1: 0 1px 1px rgba(21, 18, 15, 0.04);
+  --sombra-2: 0 2px 6px rgba(21, 18, 15, 0.08);
+  --sombra-3: 0 16px 40px rgba(21, 18, 15, 0.22);
+
+  --d-instantaneo: 80ms;
+  --d-rapido: 130ms;
+  --d-medio: 190ms;
+  --d-lento: 260ms;
+  --curva: cubic-bezier(0.2, 0, 0, 1);
+
+  --banda: 44px;
+  --trilha: 238px;
+  --controle: 28px;
+  --linha-grid: 28px;
+}
+
+:root[data-tema="escuro"] {
+  --fundo: #100e0c;
+  --superficie: #17140f;
+  --superficie-2: #1d1a15;
+  --superficie-3: #241f1a;
+  --borda: #2c261f;
+  --borda-forte: #413a31;
+  --regua-grid: #231e19;
+
+  --texto: #ece7e0;
+  --texto-2: #b3aaa0;
+  --texto-3: #8b8278;
+  --texto-invertido: #15120f;
+
+  --marca: #e0705c;
+  --marca-forte: #ec8773;
+  --marca-tenue: rgba(224, 112, 92, 0.12);
+
+  --acao: #e0705c;
+  --acao-hover: #ec8773;
+  --acento: #58a5e0;
+  --acento-leve: rgba(88, 165, 224, 0.14);
+
+  --erro: #e8897a;
+  --erro-forte: #f0a295;
+  --erro-leve: rgba(232, 137, 122, 0.12);
+  --erro-borda: rgba(232, 137, 122, 0.32);
+  --alerta: #d9a93f;
+  --alerta-leve: rgba(217, 169, 63, 0.12);
+  --alerta-borda: rgba(217, 169, 63, 0.32);
+  --sucesso: #5cb98c;
+  --sucesso-leve: rgba(92, 185, 140, 0.12);
+  --sucesso-borda: rgba(92, 185, 140, 0.32);
+  --informacao: #6fb0e4;
+  --informacao-leve: rgba(111, 176, 228, 0.12);
+  --informacao-borda: rgba(111, 176, 228, 0.32);
+
+  --serie-1: #3e92d8;
+  --serie-2: #dd6a54;
+  --serie-3: #9573c9;
+  --serie-4: #2fa885;
+  --serie-5: #b8872a;
+
+  --sombra-1: 0 1px 1px rgba(0, 0, 0, 0.5);
+  --sombra-2: 0 2px 6px rgba(0, 0, 0, 0.55);
+  --sombra-3: 0 16px 40px rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOLHA &middot; Gestao de Pessoal &mdash; fechamento de folha CLT</title>
+<meta name="description" content="Sistema de fechamento de folha padrao CLT: importacao do espelho de ponto ou planilha modelo, apuracao de extra e falta, calculo de INSS, IRRF e FGTS, contracheque e relatorios.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='3' fill='%2315120f'/><path d='M4 5h10.5L20 10.5V19H4Z' fill='%23c74634'/><path d='M7 14.2h2.2v2.2H7zm3.9 0h2.2v2.2h-2.2zm3.9 0H17v2.2h-2.2z' fill='%2315120f'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700&family=Red+Hat+Mono:wght@400;500&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/componentes.css">
+<link rel="stylesheet" href="css/modulos.css">
+
+<script>
+  // Tema antes da primeira pintura: no fim do body, quem escolheu o escuro
+  // veria um lampejo claro a cada abertura.
+  try {
+    document.documentElement.dataset.tema =
+      localStorage.getItem("rh-tema") === "escuro" ? "escuro" : "claro";
+  } catch (erro) {
+    document.documentElement.dataset.tema = "claro";
+  }
+</script>
+
+<!-- ECharts e opcional: a aplicacao desenha tabela no lugar do grafico se nao
+     carregar. Ver js/componentes/grafico.js -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js" defer></script>
+</head>
+<body>
+<div class="carregando-inicial">
+  <span class="esqueleto" style="width:180px;height:12px"></span>
+</div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
