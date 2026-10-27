@@ -425,7 +425,7 @@
 
     <article class="card">
       <div class="shots">
-        <button class="shot" type="button" data-tela="0">
+        <button class="shot" type="button" data-galeria="epi" data-tela="0">
           <img src="assets/mini-tela-saida.jpg" alt="Tela de saída do sistema" width="640" height="400" loading="lazy">
           <span class="shot-lbl"><b>Saída</b><i>entrega ao colaborador</i></span>
           <span class="shot-zoom" aria-hidden="true">
@@ -434,7 +434,7 @@
             </svg>
           </span>
         </button>
-        <button class="shot" type="button" data-tela="1">
+        <button class="shot" type="button" data-galeria="epi" data-tela="1">
           <img src="assets/mini-tela-estoque.jpg" alt="Tela de estoque do sistema" width="640" height="400" loading="lazy">
           <span class="shot-lbl"><b>Estoque</b><i>saldo por item e tamanho</i></span>
           <span class="shot-zoom" aria-hidden="true">
@@ -443,7 +443,7 @@
             </svg>
           </span>
         </button>
-        <button class="shot" type="button" data-tela="2">
+        <button class="shot" type="button" data-galeria="epi" data-tela="2">
           <img src="assets/mini-tela-reposicao.jpg" alt="Tela de reposição do sistema" width="640" height="400" loading="lazy">
           <span class="shot-lbl"><b>Reposição</b><i>requisição calculada</i></span>
           <span class="shot-zoom" aria-hidden="true">
@@ -452,7 +452,7 @@
             </svg>
           </span>
         </button>
-        <button class="shot" type="button" data-tela="3">
+        <button class="shot" type="button" data-galeria="epi" data-tela="3">
           <img src="assets/mini-tela-cadastro.jpg" alt="Tela de cadastro do sistema" width="640" height="400" loading="lazy">
           <span class="shot-lbl"><b>Cadastro</b><i>pessoas e obras</i></span>
           <span class="shot-zoom" aria-hidden="true">
@@ -508,6 +508,103 @@
         </p>
 
         <a class="demo-btn" id="openDemo" href="demo/demo-publica.html"
+           target="_blank" rel="noopener">
+          <span class="flip"><span>Acessar demo</span><span aria-hidden="true">Entrar</span></span>
+          <span class="ring" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M2 10 L10 2 M4 2 h6 v6"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </article>
+
+    <article class="card" id="folha">
+      <div class="shots">
+        <button class="shot" type="button" data-galeria="folha" data-tela="0">
+          <img src="assets/mini-tela-folha-painel.jpg" alt="Painel da competencia do sistema de folha" width="640" height="400" loading="lazy">
+          <span class="shot-lbl"><b>Painel</b><i>custo, encargos e hora extra</i></span>
+          <span class="shot-zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14"/><path d="M7 5v4M5 7h4"/>
+            </svg>
+          </span>
+        </button>
+        <button class="shot" type="button" data-galeria="folha" data-tela="1">
+          <img src="assets/mini-tela-folha-planilha.jpg" alt="Planilha modelo de apontamento manual" width="640" height="400" loading="lazy">
+          <span class="shot-lbl"><b>Planilha modelo</b><i>para quem não tem ponto</i></span>
+          <span class="shot-zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14"/><path d="M7 5v4M5 7h4"/>
+            </svg>
+          </span>
+        </button>
+        <button class="shot" type="button" data-galeria="folha" data-tela="2">
+          <img src="assets/mini-tela-folha-folha.jpg" alt="Folha da competencia colaborador por colaborador" width="640" height="400" loading="lazy">
+          <span class="shot-lbl"><b>Folha</b><i>370 colaboradores</i></span>
+          <span class="shot-zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14"/><path d="M7 5v4M5 7h4"/>
+            </svg>
+          </span>
+        </button>
+        <button class="shot" type="button" data-galeria="folha" data-tela="3">
+          <img src="assets/mini-tela-folha-contracheque.jpg" alt="Contracheque emitido pelo sistema" width="640" height="400" loading="lazy">
+          <span class="shot-lbl"><b>Contracheque</b><i>o que o sistema emite</i></span>
+          <span class="shot-zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14"/><path d="M7 5v4M5 7h4"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="card-body">
+        <div class="card-head">
+          <p class="code">Projeto 02</p>
+          <ul class="badges">
+            <li class="on">Em uso diário</li>
+            <li>Padrão CLT</li>
+            <li>100% online</li>
+            <li>Demonstração aberta</li>
+          </ul>
+        </div>
+        <h3>Fechamento de folha de pagamento</h3>
+
+        <dl class="pair">
+          <div class="p"><dt>Problema</dt><dd>As quatro fontes de uma competência chegam em quatro formatos diferentes, a mesma pessoa aparece com matrícula numa e só o nome na outra, e boa parte das empresas não tem relógio de ponto.</dd></div>
+          <div class="s"><dt>Solução</dt><dd>Um sistema que lê as quatro fontes, reconcilia a identidade entre elas, critica o que entrou, calcula INSS, IRRF e FGTS e emite o contracheque.</dd></div>
+        </dl>
+
+        <h4 class="sub-h">O que ele resolveu</h4>
+        <ul class="solved">
+          <li><b>Empresa sem relógio de ponto.</b> O sistema entrega a planilha modelo, ela volta preenchida e entra pela mesma apuração do espelho eletrônico.</li>
+          <li><b>Identidade que não casa.</b> Nome abreviado e erro de digitação vão para confirmação humana, e a confirmação fica registrada para não se repetir todo mês.</li>
+          <li><b>Regra que fica em silêncio.</b> Regra que não pôde rodar aparece como não avaliada, com a fonte que falta nomeada — nunca como limpa.</li>
+          <li><b>Tabela vencida.</b> A tabela de INSS e IRRF tem vigência declarada: competência fora dela reprova o fechamento, em vez de devolver número plausível e errado.</li>
+          <li><b>Correção sem rastro.</b> Arquivo de origem nunca é editado; toda correção vira ajuste com motivo e autor, e rodar duas vezes dá o mesmo resultado.</li>
+        </ul>
+
+        <h4 class="sub-h">Também faz</h4>
+        <div class="chips">
+          <span class="chip">Importação de XLSX e CSV</span>
+          <span class="chip">Apuração de extra, atraso e falta</span>
+          <span class="chip">Contracheque em PDF</span>
+          <span class="chip">Resumo por centro de custo</span>
+          <span class="chip">Relatório de exceções</span>
+          <span class="chip">Lançamentos manuais com autor</span>
+          <span class="chip">Catálogo de rubricas</span>
+          <span class="chip">Arquivo de eventos para importação</span>
+        </div>
+
+        <p class="living">
+          Roda no navegador, sem instalação e sem servidor, e está em uso no
+          fechamento mensal. A demonstração aberta aqui roda sobre massa sintética:
+          nenhuma pessoa, empresa ou valor é real, e nenhum arquivo de nenhuma
+          empresa foi usado como origem.
+        </p>
+
+        <a class="demo-btn" href="https://annpn.github.io/annpn/pages/portfolio/folha/"
            target="_blank" rel="noopener">
           <span class="flip"><span>Acessar demo</span><span aria-hidden="true">Entrar</span></span>
           <span class="ring" aria-hidden="true">
@@ -588,7 +685,7 @@
 
   /* ---------- faixa rolante ---------- */
   var TERMOS = ['Departamento Pessoal', 'Automação de rotinas', '<i>Python</i>',
-    'Conciliação', 'Controle de estoque', '<i>VBA</i>', 'eSocial',
+    'Folha de pagamento', 'Conciliação', 'Controle de estoque', '<i>VBA</i>', 'eSocial',
     'Custo de pessoal', '<i>Apps Script</i>', 'Inventário', 'Comércio exterior',
     '<i>Excel avançado</i>', 'Controladoria'];
   var band = document.getElementById('band');
@@ -598,16 +695,31 @@
   }
 
   /* ---------- galeria: troque/adicione itens aqui ---------- */
-  var TELAS = [
-    { src: 'assets/tela-saida.jpg', t: 'Saída',
-      cap: 'Entrega nominal ao colaborador. As medidas da pessoa já vêm preenchidas e cada item mostra saldo e estado do certificado antes da entrega.' },
-    { src: 'assets/tela-estoque.jpg', t: 'Estoque',
-      cap: 'Posição por item e tamanho, com mínimo, consumo por dia, cobertura projetada e situação do certificado.' },
-    { src: 'assets/tela-reposicao.jpg', t: 'Reposição',
-      cap: 'Requisição calculada: o sistema projeta a cobertura contra o próximo pedido e sugere o que comprar e quanto.' },
-    { src: 'assets/tela-cadastro.jpg', t: 'Cadastro',
-      cap: 'Colaboradores com grade de tamanhos e obras de destino. Quem tem movimento no livro só pode ser arquivado, nunca excluído.' }
-  ];
+  /* Uma lista por projeto: o botão da miniatura diz de qual galeria veio, e a
+     navegação do modal mostra só as telas daquele sistema. */
+  var GALERIAS = {
+    epi: [
+      { src: 'assets/tela-saida.jpg', t: 'Saída',
+        cap: 'Entrega nominal ao colaborador. As medidas da pessoa já vêm preenchidas e cada item mostra saldo e estado do certificado antes da entrega.' },
+      { src: 'assets/tela-estoque.jpg', t: 'Estoque',
+        cap: 'Posição por item e tamanho, com mínimo, consumo por dia, cobertura projetada e situação do certificado.' },
+      { src: 'assets/tela-reposicao.jpg', t: 'Reposição',
+        cap: 'Requisição calculada: o sistema projeta a cobertura contra o próximo pedido e sugere o que comprar e quanto.' },
+      { src: 'assets/tela-cadastro.jpg', t: 'Cadastro',
+        cap: 'Colaboradores com grade de tamanhos e obras de destino. Quem tem movimento no livro só pode ser arquivado, nunca excluído.' }
+    ],
+    folha: [
+      { src: 'assets/tela-folha-painel.jpg', t: 'Painel',
+        cap: 'Painel da competência: custo da folha, líquido a pagar, encargos, hora extra sobre a folha e as críticas que travam o envio.' },
+      { src: 'assets/tela-folha-planilha.jpg', t: 'Planilha modelo',
+        cap: 'Para empresa sem relógio de ponto: a planilha aparece na tela como abre no Excel, com o dicionário de cada coluna e o efeito de cada linha na folha.' },
+      { src: 'assets/tela-folha-folha.jpg', t: 'Folha',
+        cap: 'A competência fechada, colaborador por colaborador, com proventos, descontos e líquido. Clicar na linha abre o contracheque.' },
+      { src: 'assets/tela-folha-contracheque.jpg', t: 'Contracheque',
+        cap: 'O documento que o fechamento emite, na forma do recibo de pagamento que a CLT exige (art. 464), com a via da empresa e a do empregado.' }
+    ]
+  };
+  var TELAS = GALERIAS.epi;
 
   var lb = document.getElementById('lb'),
       stage = document.getElementById('lbStage'),
@@ -629,14 +741,19 @@
     if (window.gsap) gsap.fromTo(stage, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .35, ease: 'power2.out' });
   }
 
-  nav.innerHTML = TELAS.map(function (t, i) {
-    return '<button class="lb-dot" type="button">' + (t.t || ('Tela ' + (i + 1))) + '</button>';
-  }).join('');
-  nav.querySelectorAll('button').forEach(function (b, i) {
-    b.addEventListener('click', function () { pintar(i); });
-  });
+  function montarNav() {
+    nav.innerHTML = TELAS.map(function (t, i) {
+      return '<button class="lb-dot" type="button">' + (t.t || ('Tela ' + (i + 1))) + '</button>';
+    }).join('');
+    nav.querySelectorAll('button').forEach(function (b, i) {
+      b.addEventListener('click', function () { pintar(i); });
+    });
+  }
+  montarNav();
 
-  function abrir(i) {
+  function abrir(galeria, i) {
+    TELAS = GALERIAS[galeria] || GALERIAS.epi;
+    montarNav();
     ultimoFoco = document.activeElement;
     lb.hidden = false;
     pintar(i || 0);
@@ -653,7 +770,7 @@
     if (ultimoFoco) ultimoFoco.focus();
   }
   document.querySelectorAll('.shot').forEach(function (s) {
-    s.addEventListener('click', function () { abrir(+s.dataset.tela || 0); });
+    s.addEventListener('click', function () { abrir(s.dataset.galeria, +s.dataset.tela || 0); });
   });
   btnClose.addEventListener('click', fechar);
   lb.addEventListener('click', function (e) { if (e.target === lb) fechar(); });
@@ -719,23 +836,28 @@
   });
 
   // Imã: o botão desliza alguns pixels na direção do cursor e volta ao sair.
-  var mag = document.getElementById('openDemo');
-  if (mag && window.matchMedia('(hover: hover)').matches) {
-    mag.addEventListener('mousemove', function (e) {
-      var r = mag.getBoundingClientRect();
-      gsap.to(mag, {
-        x: (e.clientX - r.left - r.width / 2) * .16,
-        y: (e.clientY - r.top - r.height / 2) * .22,
-        duration: .5, ease: 'power3.out'
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.demo-btn').forEach(function (mag) {
+      mag.addEventListener('mousemove', function (e) {
+        var r = mag.getBoundingClientRect();
+        gsap.to(mag, {
+          x: (e.clientX - r.left - r.width / 2) * .16,
+          y: (e.clientY - r.top - r.height / 2) * .22,
+          duration: .5, ease: 'power3.out'
+        });
+      });
+      mag.addEventListener('mouseleave', function () {
+        gsap.to(mag, { x: 0, y: 0, duration: .6, ease: 'elastic.out(1,.45)' });
       });
     });
-    mag.addEventListener('mouseleave', function () {
-      gsap.to(mag, { x: 0, y: 0, duration: .6, ease: 'elastic.out(1,.45)' });
-    });
   }
-  gsap.from('.demo-btn', {
-    scrollTrigger: { trigger: '.demo-btn', start: 'top 92%', once: true },
-    y: 14, opacity: 0, duration: .5, ease: 'power3.out'
+  // Cada botão entra com o próprio cartão: com um gatilho só, o segundo
+  // apareceria junto com o primeiro, meia página antes da hora.
+  gsap.utils.toArray('.demo-btn').forEach(function (b) {
+    gsap.from(b, {
+      scrollTrigger: { trigger: b, start: 'top 92%', once: true },
+      y: 14, opacity: 0, duration: .5, ease: 'power3.out'
+    });
   });
 
   var tfill = document.getElementById('tfill');
